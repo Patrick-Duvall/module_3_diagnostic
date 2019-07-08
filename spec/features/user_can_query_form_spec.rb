@@ -13,14 +13,15 @@
 # - The food group to which the food belongs
 # - The food's data source
 # - The food's manufacturer
-
 require "rails_helper"
+WebMock.allow_net_connect!
 
 describe "as a user" do
   it "lets me search a form" do
     visit '/'
     fill_in :q, with: "sweet potatoes"
-    click_link "Search"
+    click_button "Search"
+    save_and_open_page
     expect(current_path).to eq("/foods")
     expect(page).to have_content("531 results")
 
