@@ -9,9 +9,3 @@ class Food
   end
 
 end
-
-# NDB Number ndbno
-# - The food's name
-# - The food group to which the food belongs
-# - The food's data source
-# - The food's manufacturer
