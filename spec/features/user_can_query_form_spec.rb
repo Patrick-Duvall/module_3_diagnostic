@@ -25,8 +25,8 @@ describe "as a user" do
     expect(current_path).to eq("/foods")
     expect(page).to have_content("531 results")
 
-    expect(page).to have_selector('.food-item', count: 10) 
-    expect(page).to have_selector('.food-item-name, count: 10)
+    expect(page).to have_selector('.food-item', count: 10)
+    expect(page).to have_selector('.food-item-name', count: 10)
     expect(page).to have_selector('.food-item-manufacturer', count: 10)
     expect(page).to have_selector('.food-item-data_source', count: 10)
     expect(page).to have_selector('.food-item-ndb', count: 10)

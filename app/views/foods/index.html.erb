@@ -1,11 +1,11 @@
 <p><%= @food_presenter.count %> results</p>
 <%  @food_presenter.foods.each do |food| %>
 <section class='food-item'>
-  <p><%= food.name %></p>
-  <p><%= food.manufacturer %></p>
-  <p><%= food.ndb %></p>
-  <p><%= food.group %></p>
-  <p><%= food.data_source %></p>
+  <p class='food-item-name'><%= food.name %></p>
+  <p class='food-item-manufacturer'><%= food.manufacturer %></p>
+  <p class='food-item-ndb'><%= food.ndb %></p>
+  <p class='food-item-group'><%= food.group %></p>
+  <p class='food-item-data_source'><%= food.data_source %></p>
 </section>
 
 <% end %>
