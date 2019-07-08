@@ -8,9 +8,17 @@ class USDAFoodsService
   end
 
   def get_foods
-  conn = Faraday.get("https://api.nal.usda.gov/ndb/search/?format=json&q=#{@food}&sort=r&max=10&offset=0&api_key=#{key}")
-  json = JSON.parse(conn.body)
+  response = conn.get("?q=#{@food}&sort=r&max=10&offset=0&api_key=#{key}")
+  json = JSON.parse(response.body)
   json
   end
+
+  private
+
+  def conn
+  @_conn = Faraday.new("https://api.nal.usda.gov/ndb/search/?format=json")  do |faraday|
+      faraday.adapter Faraday.default_adapter
+    end
+end
 
 end
